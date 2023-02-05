@@ -71,13 +71,11 @@ const getImage = async (value, page) => {
       behavior: 'smooth',
     });
     if (pageId === 1) {
-      console.log('Hooray!');
       console.log(response.data.hits.length);
       loadMore.style.display = 'flex';
       lightbox.refresh();
       Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
     } else if (response.data.hits.length == 0) {
-      console.log('Sorry!');
       loadMore.style.display = 'none';
       Notify.failure(
         "We're sorry, but you've reached the end of search results."
